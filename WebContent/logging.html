@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="js/logging.js"></script>
+<script type="text/javascript">
+    $(function () {
+    $('#container').highcharts({
+        title: {
+            text: 'last 24 hours report of sensors',
+            x: -20 //center
+        },
+        /*subtitle: {
+            text: 'Source: WorldClimate.com',
+            x: -20
+        },*/
+        xAxis: {
+            categories: ['5AM','10AM','3PM','8PM','1AM']
+        },
+        yAxis: {
+            title: {
+                text: 'Values'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: 'pt'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Temparature',
+            data: [7.0, 6.9, 9.5, 14.5, 18.2]
+        }, {
+            name: 'Humidity',
+            data: [0.2, 0.8, 5.7, 11.3, 17.0]
+        },  {
+            name: 'Luminousity',
+            data: [3.9, 4.2, 5.7, 8.5, 11.9]
+        }]
+    });
+});
+</script>
+<script type="text/javascript">
+    $(function () {
+    $('#container1').highcharts({
+        title: {
+            text: 'values',
+            x: -20 //center
+        },
+        /*subtitle: {
+            text: 'Source: WorldClimate.com',
+            x: -20
+        },*/
+        xAxis: {
+            categories: ['5AM','10AM','3PM','8PM','1AM']
+        },
+        yAxis: {
+            title: {
+                text: 'Values'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: 'pt'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [  {
+            name: 'Pressure',
+            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+        }]
+    });
+});
+</script>
+
+​
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Smart home system</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Leakage Detection</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <!--<li>
+                    <a href="blank-page.html">How it works</a>
+                </li>-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>Team<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        <li>
+                            <a href="index.html"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="index1.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="sensorinfo.html"><i class="fa fa-fw fa-bar-chart-o"></i>Sensor information</a>
+                    </li>
+                    <li>
+                        <a href="logging.html"><i class="fa fa-fw fa-bar-chart-o"></i>Archived Logs</a>
+                    </li>
+                    
+                </ul>
+            </div>     
+             <!--/.navbar-collapse -->
+        </nav>
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Alert Logs 
+                        </h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <!--<div class="col-xs-3">
+                                        <i class="fa fa-comments fa-5x"></i>
+                                    </div>-->
+                                    <div style="text-align:center">
+                                        <div class="huge">Previous Log</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="x_panel">
+                                <div class="x_content">
+                                    <table class="table table-hover" id="category_table">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Pressure Value</th>
+                                                <th>Pressure Status</th>
+                                                <th>Connected Nodes</th>
+                                                <th>Time</th>
+                                            </tr>
+                                        </thead>
+                                       
+                                        
+                                        
+                                    </table>
+
+                                </div>
+                            </div>
+                            <!--
+                            <div class="panel-footer">
+                                <div style="display: none;" id="hiddenText">This is hidden</div>
+                                <a href="#" onclick="$('#hiddenText').show(); return false;">View details
+                                </a>
+                            </div>
+                            -->
+                        </div>   
+                    </div>
+                </div>  
+                <!-- /.row -->
+                 
+
+                           
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+    
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
+    
+    <script type="text/javascript">
+    $(function () {
+    $('#container1').highcharts({
+        title: {
+            text: '24 report of sensors',
+            x: -20 //center
+        },
+        /*subtitle: {
+            text: 'Source: WorldClimate.com',
+            x: -20
+        },*/
+        xAxis: {
+            categories: ['5AM','10AM','3PM','8PM','1AM']
+        },
+        yAxis: {
+            title: {
+                text: 'Values'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: 'pt'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Temparature',
+            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+        }, {
+            name: 'Humidity',
+            data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+        },  {
+            name: 'Luminousity',
+            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+        }]
+    });
+});
+</script>
+
+</body>
+
+</html>
